@@ -43,7 +43,7 @@ jobs:
           cp -r /tmp/personal_page_landing_build/* /var/www/personal-page-henriquez-lucianny/
 
 
-          chown -R www-data:www-data /var/www/personal-page-landing
+          chown -R www-data:www-data /var/www/personal-henriquez-lucianny
 
 
           nginx -t
