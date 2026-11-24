@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucianny Henriquez — Portafolio & VPS</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --lilac-deep: #7C5CFA;
+            --lilac-primary: #9B7EFC;
+            --lilac-soft: #EDE7FF;
+            --lilac-mist: #F7F4FF;
+            --bg-canvas: #FAF8FF;
+            --surface-white: #FFFFFF;
+            --accent-plum: #A855F7;
+            --accent-rose: #D96B9B;
+            --text-ink: #241E38;
+            --text-muted: #665E82;
+            --border-lilac: #E6DEFF;
+            --shadow-soft: 0 12px 32px rgba(124, 92, 250, 0.08);
+            --shadow-card: 0 20px 45px rgba(124, 92, 250, 0.20);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at 85% 8%, rgba(196, 176, 255, 0.28) 0%, transparent 38%),
+                radial-gradient(circle at 10% 45%, rgba(225, 212, 255, 0.35) 0%, transparent 42%),
+                var(--bg-canvas);
+            color: var(--text-ink);
+            font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Nav */
+        header {
+            padding: 28px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-ink);
+            letter-spacing: 0.4px;
+            text-decoration: none;
+        }
+
+        .logo-badge {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #A78BFA 0%, #7C5CFA 100%);
+            color: #FFFFFF;
+            display: grid;
+            place-items: center;
+            font-size: 15px;
+            box-shadow: 0 8px 18px rgba(124, 92, 250, 0.25);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--lilac-deep);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: var(--lilac-deep);
+            background: var(--lilac-mist);
+            border: 1px solid var(--border-lilac);
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 48px;
+            padding: 36px 0 84px 0;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: var(--lilac-soft);
+            color: var(--lilac-deep);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            margin-bottom: 18px;
+        }
+
+        .hero-title {
+            font-size: clamp(44px, 6vw, 68px);
+            font-weight: 800;
+            background: linear-gradient(135deg, #6D4AFF 0%, #A986FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.08;
+            margin-bottom: 22px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 470px;
+        }
+
+        .hero-subtitle a {
+            color: var(--lilac-deep);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(124, 92, 250, 0.35);
+        }
+
+        .btn-lilac {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #9F7AEA 0%, #7C5CFA 100%);
+            color: #FFFFFF;
+            padding: 14px 26px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 24px rgba(124, 92, 250, 0.28);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-lilac:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(124, 92, 250, 0.36);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .image-frame {
+            position: relative;
+            padding: 12px;
+            border-radius: 28px;
+            background: linear-gradient(145deg, #F3EEFF 0%, #E2D8FF 100%);
+            border: 1px solid var(--border-lilac);
+            box-shadow: var(--shadow-soft);
+            max-width: 440px;
+            width: 100%;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 420px;
+            border-radius: 20px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Profile & Stats Section */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 48px;
+            margin-bottom: 96px;
+            align-items: start;
+        }
+
+        /* Left Pastel Lilac Card */
+        .profile-card {
+            background: linear-gradient(160deg, #9D81FA 0%, #7E60F5 100%);
+            color: #FFFFFF;
+            border-radius: 26px;
+            padding: 36px 32px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .info-group {
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .info-group:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-weight: 700;
+            color: #EDE7FF;
+            margin-bottom: 3px;
+        }
+
+        .info-value {
+            font-size: 14.5px;
+            font-weight: 500;
+            color: #FFFFFF;
+        }
+
+        .info-value a {
+            color: #FFFFFF;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.16);
+            color: #FFFFFF;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            background: rgba(255, 255, 255, 0.28);
+            transform: translateY(-2px);
+        }
+
+        /* Right Stats Area */
+        .stats-area {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .stat-item {
+            background: var(--surface-white);
+            border: 1px solid var(--border-lilac);
+            border-radius: 20px;
+            padding: 24px 26px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .stat-item h4 {
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            color: var(--lilac-deep);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat-number {
+            font-size: 46px;
+            font-weight: 800;
+            color: #8B5CF6;
+            line-height: 1.05;
+        }
+
+        .bio-box {
+            background: var(--surface-white);
+            border: 1px solid var(--border-lilac);
+            border-radius: 24px;
+            padding: 32px 34px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .bio-heading {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--lilac-deep);
+            line-height: 1.3;
+            margin-bottom: 14px;
+        }
+
+        .bio-text {
+            color: var(--text-muted);
+            font-size: 14.5px;
+            margin-bottom: 24px;
+        }
+
+        /* Experience / Education Section */
+        .experience-section {
+            padding: 72px 0 92px 0;
+            border-top: 1px solid var(--border-lilac);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(34px, 4.5vw, 46px);
+            font-weight: 800;
+            color: var(--lilac-deep);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            max-width: 640px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 28px;
+            margin-bottom: 24px;
+            background: var(--surface-white);
+            border: 1px solid var(--border-lilac);
+            border-radius: 20px;
+            padding: 28px 30px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .timeline-left h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-ink);
+        }
+
+        .timeline-left .date {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: var(--lilac-mist);
+            color: var(--lilac-deep);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .timeline-right h3 {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--lilac-deep);
+            margin-bottom: 10px;
+        }
+
+        .timeline-right p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .location-tag {
+            color: #8B5CF6;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--lilac-mist);
+            padding: 5px 12px;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 0 42px 0;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 960px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-subtitle {
+                margin: 0 auto 30px auto;
+            }
+            .hero-image {
+                justify-content: center;
+            }
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-icon {
+                display: inline-flex;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <a href="#" class="logo">
+                <span class="logo-badge"><i class="fa-solid fa-sparkles"></i></span>
+                <span>portafolio.dev</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#perfil">Perfil</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="menu-icon" aria-label="Menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-text">
+                <div class="hero-pill">
+                    <i class="fa-solid fa-server"></i> Desplegado en Azure VPS con Nginx
+                </div>
+                <h1 class="hero-title">Hola,<br>Soy Lucianny<br>Henriquez</h1>
+                <p class="hero-subtitle">
+                    Desarrolladora de software, entusiasta del diseño de interfaces limpias y administración de servidores Linux. Proyecto alojado en <a href="#">Azure Cloud</a>.
+                </p>
+                <a href="#experiencia" class="btn-lilac">Ver Trayectoria <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-image">
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Retrato de perfil">
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile & Stats Section -->
+        <section id="perfil" class="profile-grid">
+            <!-- Left Info Card -->
+            <div class="profile-card">
+                <div class="info-group">
+                    <div class="info-label">Nombre</div>
+                    <div class="info-value">Lucianny Henriquez</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">Rol</div>
+                    <div class="info-value">Desarrolladora &amp; UI Enthusiast</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">Correo Electrónico</div>
+                    <div class="info-value">lucianny@ejemplo.com</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">Ubicación</div>
+                    <div class="info-value">Quito, Ecuador</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">Stack &amp; Intereses</div>
+                    <div class="info-value">Web, Linux, Bases de Datos, UI</div>
+                </div>
+                <div id="contacto" class="info-group">
+                    <div class="info-label">Redes</div>
+                    <div class="social-icons">
+                        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Stats and Bio -->
+            <div class="stats-area">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h4>Proyectos Web</h4>
+                        <div class="stat-number">18+</div>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Semestres / Práctica</h4>
+                        <div class="stat-number">03</div>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Servidores Configurados</h4>
+                        <div class="stat-number">05</div>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Disponibilidad VPS</h4>
+                        <div class="stat-number">99%</div>
+                    </div>
+                </div>
+
+                <div class="bio-box">
+                    <h2 class="bio-heading">Construyendo aplicaciones web claras, funcionales y bien estructuradas</h2>
+                    <p class="bio-text">
+                        Me enfoco en crear interfaces cuidadas con paletas suaves y legibles, conectadas a arquitecturas sólidas y servidores configurados desde cero. Esta página forma parte de mi práctica de despliegue en una máquina virtual Ubuntu sobre Microsoft Azure utilizando Nginx.
+                    </p>
+                    <a href="#perfil" class="btn-lilac">Explorar Perfil <i class="fa-solid fa-sparkles"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiences Section -->
+        <section id="experiencia" class="experience-section">
+            <div class="section-header">
+                <h2>Experiencia y Formación</h2>
+                <p>Recorrido académico y práctico en desarrollo de software, diseño de interfaces y despliegue en la nube.</p>
+            </div>
+
+            <!-- Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <h3>Universidad UTE</h3>
+                    <div class="date">2026 — Actualidad</div>
+                </div>
+                <div class="timeline-right">
+                    <h3>Desarrollo de Software &amp; Prácticas</h3>
+                    <p>Desarrollo de aplicaciones web, diseño de prototipos de interfaz, automatización de pruebas y participación en proyectos académicos y preprofesionales.</p>
+                    <div class="location-tag">
+                        <i class="fa-solid fa-location-dot"></i> Quito, Ecuador
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <h3>Infraestructura y Web</h3>
+                    <div class="date">Práctica Azure VPS</div>
+                </div>
+                <div class="timeline-right">
+                    <h3>Despliegue de Sitios Estáticos con Nginx</h3>
+                    <p>Aprovisionamiento de máquina virtual Linux, acceso remoto por SSH, administración de directorios en <code>/var/www</code> y configuración de bloques de servidor en Nginx.</p>
+                    <div class="location-tag">
+                        <i class="fa-solid fa-cloud"></i> Microsoft Azure
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <h3>Diseño UI &amp; Frontend</h3>
+                    <div class="date">Proyectos Personales</div>
+                </div>
+                <div class="timeline-right">
+                    <h3>Interfaces Responsivas y Estética Cuidada</h3>
+                    <p>Maquetación en HTML y CSS con enfoque en jerarquía visual, contraste legible, espaciado equilibrado y adaptación a pantallas de escritorio y móviles.</p>
+                    <div class="location-tag">
+                        <i class="fa-solid fa-code"></i> HTML5 / CSS3
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Hecho con dedicación · Servido desde Ubuntu + Nginx en Azure
+        </footer>
+    </div>
+
+</body>
+</html>
